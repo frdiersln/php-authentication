@@ -1,3 +1,16 @@
+<?php
+require_once "connection.php";
+
+session_start();
+
+if (isset($_SESSION['user'])){
+    
+}
+else{
+    header('location: index.php');
+}
+?>
+
 <html lang="en">
 
 <head>
@@ -10,6 +23,11 @@
 </head>
 <body>
 	<div class="container">
+
+        <?php 
+            echo "<h1> Mağazaya hoşgeldin ".$_SESSION['user']['name']."!</h1>";
+        ?>
+
 	</div>
 </body>
 </html>

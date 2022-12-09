@@ -10,7 +10,7 @@ if (isset($_SESSION['user'])) {
 if(isset($_REQUEST['register_btn'])){ //onclick for register_btn
 
     $name = strip_tags($_REQUEST['name']);
-    $email = filter_var($_REQUEST['email'],FILTER_SANITIZE_EMAIL);
+    $email = filter_var(strtolower($_REQUEST['email']),FILTER_SANITIZE_EMAIL);
     $password = strip_tags($_REQUEST['password']);
 
     if(empty($name)){
